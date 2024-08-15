@@ -17,6 +17,7 @@ import {
   FaPhone,
   FaShoppingCart,
 } from "react-icons/fa";
+import wtfLogo from "../assets/wtf-logo.png";
 
 export const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -33,13 +34,13 @@ export const Header = () => {
       <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <img
-            src={LOGO_URL}
+            src={wtfLogo}
             alt="App Logo"
-            style={{ width: 50, height: "auto" }}
+            style={{ width: 70, height: "auto" }}
           />
           <Typography
             variant="h6"
-            sx={{ ml: 2, fontFamily: "Roboto, sans-serif", fontWeight: "bold" }}
+            sx={{ ml: 0, fontFamily: "Roboto, sans-serif", fontWeight: "bold" }}
           >
             WTF! Where's The Food
           </Typography>
