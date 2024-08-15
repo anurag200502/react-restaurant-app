@@ -24,5 +24,5 @@ MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-- Email: your-email@example.com
-- GitHub: [yourusername](https://github.com/yourusername)
+- Email: anurag.200502@gmail.com
+- GitHub: [anurag200502](https://github.com/anurag200502)
