@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   Box,
@@ -12,22 +11,14 @@ import {
 } from "@mui/material";
 import { FiClock } from "react-icons/fi";
 import { AiOutlineStar } from "react-icons/ai";
-import { CDN_URL, MENU_API } from "../utils/constant";
+import { CDN_URL } from "../utils/constant";
 import ShimmerMenu from "./ShimmerMenu";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId);
-    const json = await data.json();
-    setResInfo(json.data);
-  };
+  const resInfo = useRestaurantMenu(resId);
 
   if (!resInfo) return <ShimmerMenu />;
 

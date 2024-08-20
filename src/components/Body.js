@@ -4,6 +4,8 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import OfflineGame from "./OfflineGame";
 
 const Body = () => {
   // State Variables
@@ -11,6 +13,27 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [isFiltered, setIsFiltered] = useState(false); // New state for filter status
+
+  // const onlineStatus = useOnlineStatus();
+
+  // if (onlineStatus === false) {
+  //   return (
+  //     <div style={{ textAlign: "center", marginTop: "50px" }}>
+  //       <h2
+  //         style={{
+  //           color: "#1976d2",
+  //           fontSize: "24px",
+  //           fontWeight: "bold",
+  //           marginBottom: "20px",
+  //           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
+  //         }}
+  //       >
+  //         You're offline! Try this game while you wait:
+  //       </h2>
+  //       <OfflineGame />
+  //     </div>
+  //   );
+  // };
 
   useEffect(() => {
     fetchData();
@@ -50,7 +73,7 @@ const Body = () => {
     setFilteredRestaurant(listOfRestaurants);
     setIsFiltered(false); // Reset filter status
     setSearchText(""); // Clear search text
-  };
+  };  
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
