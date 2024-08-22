@@ -87,6 +87,18 @@ export const Header = () => {
           </Button>
           <Button
             component={Link}
+            to="/grocery"
+            color="inherit"
+            sx={{
+              fontFamily: "Roboto, sans-serif",
+              fontWeight: "medium",
+              "&:hover": { bgcolor: "secondary.main" },
+            }}
+          >
+            Grocery
+          </Button>
+          <Button
+            component={Link}
             to="/cart"
             color="inherit"
             sx={{
@@ -109,6 +121,7 @@ export const Header = () => {
           >
             {btnName === "Login" ? <FaUser /> : <FaSignOutAlt />}
           </IconButton>
+          <Button>Grocery</Button>
         </Box>
       </Toolbar>
     </AppBar>
